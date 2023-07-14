@@ -35,7 +35,7 @@ class ROI_Calc():
 # A. 
     # create a method to show income and expense lists for troubleshooting.
     def showIncome(self):
-        print('\nThese is the income you input:') 
+        print('\nThis is the income you input:') 
         for spot in self.income:
             print(spot)
     def showExpense(self):
@@ -48,7 +48,7 @@ class ROI_Calc():
     def monthlyIncome(self):    
         print("Let's get your income in!")    
 
-        rental_income = (input("How much do you intend to charage for monthly rent?: "))
+        rental_income = (input("How much do you intend to charge for monthly rent?: "))
         self.income.append(rental_income)
         misc_income = (input("Will there be any other income from the property besides rent (such as laundry or a gym)? Input that here: "))
         self.income.append(misc_income)
@@ -71,7 +71,6 @@ class ROI_Calc():
             next_step = input("\nType 'investments' or 'back' to access the main menu. If you made a mistake in your income, type 'income' to redo it.")
             if next_step == "investments":
                 self.initialInvest()
-        # For some reason, I have to quit twice after that...
             elif next_step == 'back':
                 print('Okay!')
                 return run()
@@ -83,7 +82,6 @@ class ROI_Calc():
             next_step = input("\nLet's input your expenses: type 'expenses' or 'back' to access the main menu. If you made a mistake in your income, type 'income' to redo it.")
             if next_step == "expenses":
                 self.monthlyExpenses()
-        # For some reason, I have to quit twice after that...
             elif next_step == 'back':
                 print('Okay!')
                 return run()
@@ -134,7 +132,6 @@ class ROI_Calc():
             next_step = input("\nType 'investments' or 'back' to access the main menu. If you made a mistake in your expenses, type 'expenses' to redo it.")
             if next_step == "investments":
                 self.initialInvest()
-        # For some reason, I have to quit twice after that...
             elif next_step == 'back':
                 print('Okay!')
                 return run()
@@ -147,7 +144,6 @@ class ROI_Calc():
             next_step = input("Type 'income' or 'back' to access the main menu. If you made a mistake in your expenses, type 'expenses' to redo it.")
             if next_step == "income":
                 self.monthlyIncome()
-        # For some reason, I have to quit twice after that...
             elif next_step == 'back':
                 print('Okay!')
                 return run()
@@ -173,7 +169,7 @@ class ROI_Calc():
 
 
 # 4.
-    # create a method to input the inital investment.
+    # Method to input the inital investment.
     def initialInvest(self):
         print("Let's add your initial investment into the equation.")
         down_payment = input("\nPlease enter your initial down payment: ")
@@ -215,7 +211,6 @@ class ROI_Calc():
     def ROI(self):
         if self.yearlycf == [] or self.investment == []:
             print("Can't do math if the input isn't there! Input your income/expenses, calculate your cash flow, and input your investment first.")
-        # do something like
         if self.yearlycf and self.investment:
             print("Now that you've input that absolutely bananas amount of information, let's get your projected return on investment!")
             final_cashflow = 0
